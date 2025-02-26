@@ -86,16 +86,16 @@ body {
 }
 
 .presentacion__contenido {
-  width: 50%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
 .presentacion__contenido__titulo {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   font-family: var(--fuente-krona);
-  line-height: 1.3;
+  line-height: 2.5rem;
   flex: auto;
 }
 

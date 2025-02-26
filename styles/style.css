@@ -96,6 +96,7 @@ body {
   font-size: 1.8rem;
   font-family: var(--fuente-krona);
   line-height: 1.3;
+  flex: auto;
 }
 
 .titulo-destaque {
@@ -106,6 +107,7 @@ body {
   font-size: 1.5rem;
   font-family: var(--fuente-montserrat);
   line-height: 1.6;
+  flex: auto;
 }
 
 /* Enlaces */

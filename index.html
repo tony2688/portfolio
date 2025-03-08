@@ -1,53 +1,441 @@
 <!DOCTYPE html>
 <html lang="es">
+<!-- Configuración del documento y recursos -->
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio</title>
-    <link rel="stylesheet" href="styles/style.css" />
+  <!-- Metadatos básicos para SEO y configuración -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Titulo -->
+  <title>Antonio Romero | Técnico Superior en Programación</title>
+  <meta name="description"
+    content="Técnico Superior en Programación especializado en React, Python y soluciones web innovadoras" />
+  <meta name="keywords" content="desarrollo web, programación, React, Python, PHP, desarrollo web" />
+
+  <!-- Importación de fuentes tipográficas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Hojas de estilo CSS -->
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
 <body>
-    <header class="header">
-        <button class="header__hamburger" aria-label="Menú principal" title="Menú de navegación">
-            <span class="header__hamburger-line"></span>
-            <span class="header__hamburger-line"></span>
-            <span class="header__hamburger-line"></span>
-        </button>
-        <nav class="header__menu">
-            <a class="header__menu__link" href="index.html">Home</a>
-            <a class="header__menu__link" href="about.html">Sobre Mi</a>
-            <a class="header__menu__link" href="curriculum.html">Curriculum</a>
-        </nav>
-    </header>
-    <main class="presentacion">
-        <section class="presentacion__contenido">
-            <h1 class="presentacion__contenido__titulo">
-                Haz crecer tu negocio con una web moderna,
-                <strong class="titulo-destaque">rápida y optimizada para aumentar tus ventas.</strong>
-            </h1>
-            <p class="presentacion__contenido__texto">
-                <strong>¡Hola! Soy Antonio Romero</strong>, desarrollador Full-Stack
-                con experiencia en React, HTML, CSS, JavaScript, PHP y Python. Me
-                especializo en ayudar a emprendedores y diseñadores a transformar sus
-                ideas en soluciones web efectivas. ¿Trabajamos juntos?
-            </p>
-            <div class="presentacion__enlaces">
-                <h2 class="presentacion__enlaces_subtitulo">Accede a mis redes</h2>
-                <a class="presentacion__enlaces__link"
-                    href="https://www.linkedin.com/in/antonio-orlando-romero-7158b414b//">
-                    <img src="assets/linkedin.png" alt="linkedin" />
-                    Linkedin</a>
-                <a class="presentacion__enlaces__link" href="https://github.com/tony2688/">
-                    <img src="assets/github.png" alt="github" />
-                    GitHub</a>
+  <!-- Canvas para efectos visuales de fondo -->
+  <canvas id="networkCanvas"></canvas>
+
+  <!-- Barra de navegación principal -->
+  <header class="header">
+    <!-- ... código de navegación ... -->
+    <nav class="nav container">
+      <!-- Logo del sitio -->
+      <a href="#" class="nav__logo">AR</a>
+
+      <!-- Botón de menú móvil -->
+      <div class="nav__toggle" id="nav-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <!-- Lista de navegación -->
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="#home" class="nav__link active-link">Inicio</a>
+        </li>
+        <li class="nav__item">
+          <a href="#about" class="nav__link">Sobre Mí</a>
+        </li>
+        <li class="nav__item">
+          <a href="#projects" class="nav__link">Proyectos</a>
+        </li>
+        <li class="nav__item">
+          <a href="#skills" class="nav__link">Habilidades</a>
+        </li>
+        <li class="nav__item">
+          <a href="#contact" class="nav__link">Contacto</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal del sitio -->
+  <main class="main">
+    <!-- Sección de inicio con presentación personal -->
+    <section class="home section" id="home">
+      <!-- ... contenido de inicio ... -->
+      <div class="home__container container grid">
+        <div class="home__content">
+          <!-- Título con efecto de escritura -->
+          <h1 class="home__title">
+            ¡Bienvenidos! Soy <span class="home__title-text"></span>
+          </h1>
+          <p class="home__description">
+            Técnico Superior en Programación especializado en desarrollar
+            soluciones web innovadoras que impulsan negocios y optimizan
+            resultados. Mi enfoque combina creatividad, eficiencia y
+            tecnología para transformar ideas en experiencias digitales
+            únicas.
+          </p>
+
+          <!-- Enlaces a redes sociales -->
+          <div class="home__social">
+            <!-- GitHub -->
+            <a href="https://github.com/tony2688" target="_blank" rel="noopener noreferrer" class="home__social-link"
+              aria-label="GitHub">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/antonio-orlando-romero-7158b414b" target="_blank"
+              rel="noopener noreferrer" class="home__social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de información personal y experiencia -->
+    <section class="about section" id="about">
+      <!-- ... contenido sobre mí ... -->
+      <h2 class="section__title">Sobre Mí</h2>
+
+      <div class="about__container container grid">
+        <!-- Imagen de perfil -->
+        <img src="assets/imagenyo.png" alt="Antonio Romero - Técnico Superior en Programación" class="about__img" />
+
+        <!-- Información personal -->
+        <div class="about__data">
+          <h3 class="about__title">Mi trayectoria como programador</h3>
+          <p class="about__description">
+            Soy Técnico Superior en Programación con más de 2 años de
+            experiencia creando aplicaciones web modernas, intuitivas y
+            eficientes. Durante este período he completado exitosamente 7
+            proyectos que abarcan desde sitios web dinámicos hasta
+            aplicaciones interactivas, utilizando tecnologías líderes como
+            JavaScript, React, PHP, Python y bases de datos SQL. Mi enfoque
+            está en desarrollar soluciones tecnológicas innovadoras que no
+            solo resuelvan problemas reales, sino que también optimicen la
+            experiencia del usuario, impulsando el rendimiento y facilitando
+            el crecimiento de negocios en diversos sectores.
+          </p>
+
+          <!-- Estadísticas y logros -->
+          <div class="about__info">
+            <!-- Años de experiencia -->
+            <div class="about__box">
+              <i class="fas fa-award about__icon"></i>
+              <h3 class="about__title-info">2+</h3>
+              <span class="about__subtitle">Años de experiencia</span>
             </div>
-        </section>
-        <img class="presentacion__imagen" src="assets/imagenyo.png" alt="imagen de perfil" />
-    </main>
-    <footer class="footer">Desarrolado por Antonio Romero</footer>
-    <script src="scripts/main.js"></script>
+
+            <!-- Proyectos completados -->
+            <div class="about__box">
+              <i class="fas fa-briefcase about__icon"></i>
+              <h3 class="about__title-info">7+</h3>
+              <span class="about__subtitle">Proyectos completados</span>
+            </div>
+
+            <!-- Soporte -->
+            <div class="about__box">
+              <i class="fas fa-headset about__icon"></i>
+              <h3 class="about__title-info">24/7</h3>
+              <span class="about__subtitle">Soporte online</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portafolio de proyectos realizados -->
+    <section class="projects section" id="projects">
+      <h2 class="section__title">Proyectos Recientes</h2>
+
+      <div class="projects__container container grid">
+        <!-- Proyecto Calculadora Solar -->
+        <article class="project__card">
+          <img src="assets/solar-calc.jpg" alt="Calculadora Solar Inteligente" class="project__img lazyload"
+            loading="lazy" />
+          <div class="project__data">
+            <h3 class="project__title">Calculadora Solar Inteligente</h3>
+            <p class="project__description">
+              ¿Cuánta energía solar necesitas? Descubre exactamente qué
+              necesitas para tu proyecto solar en pocos pasos. Nuestra
+              calculadora inteligente analiza tu consumo eléctrico y te
+              muestra al instante cuántos paneles solares, conversores e
+              inversores, y baterías requieres para cubrir tus necesidades
+              energéticas. Rápido, preciso y fácil de usar. ¡Empieza ahora y
+              toma control sobre tu energía!
+            </p>
+            <a href="#" class="project__button">
+              Calcula tu proyecto solar ahora
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Proyecto Calculadora 3D  -->
+        <article class="project__card">
+          <img src="assets/calculadora3D.png" alt="API REST" class="project__img lazyload" loading="lazy" />
+          <div class="project__data">
+            <h3 class="project__title">
+              Calculadora de Impresión 3D Inteligente
+            </h3>
+            <p class="project__description">
+              Optimiza tus impresiones fácilmente y sin errores. Nuestra
+              calculadora especializada te permite conocer rápidamente el
+              tiempo estimado, cantidad de material necesario y costo total de
+              tus proyectos de impresión 3D. Precisa, sencilla y eficiente.
+              ¡Simplifica tus cálculos y enfócate en crear!
+            </p>
+            <a href="#" class="project__button">
+              Calcula tu impresión 3D ahora
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+        <!-- Nuevo Proyecto: Sistema de Gestión de Inventario -->
+        <article class="project__card">
+          <img src="assets/project5.jpg" alt="Sistema de Inventario" class="project__img lazyload" loading="lazy" />
+          <div class="project__data">
+            <h3 class="project__title">Sistema de Gestión de Inventario</h3>
+            <p class="project__description">
+              Sistema web completo para la gestión eficiente de inventarios.
+              Incluye seguimiento en tiempo real, alertas de stock bajo,
+              generación de reportes y dashboard interactivo. Desarrollado con
+              PHP, MySQL y JavaScript para una experiencia fluida y
+              responsiva.
+            </p>
+            <a href="#" class="project__button">
+              Ver Sistema
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sección de Habilidades -->
+    <section class="skills section" id="skills">
+      <h2 class="section__title">Habilidades</h2>
+
+      <!-- Primera fila: Frontend y Backend -->
+      <div class="skills__container">
+          <div class="skills__row">
+              <div class="skills__content">
+                  <h3 class="skills__title">Frontend Development</h3>
+                  <div class="skills__box">
+                      <div class="skills__data">
+                          <i class="fab fa-html5 skills__icon"></i>
+                          <div class="skills__info">
+                              <h3 class="skills__name">HTML5</h3>
+                              <span class="skills__level">Intermedio</span>
+                          </div>
+                      </div>
+                      <div class="skills__data">
+                          <i class="fab fa-css3-alt skills__icon"></i>
+                          <div class="skills__info">
+                              <h3 class="skills__name">CSS3</h3>
+                              <span class="skills__level">Intermedio</span>
+                          </div>
+                      </div>
+                      <div class="skills__data">
+                          <i class="fab fa-js skills__icon"></i>
+                          <div class="skills__info">
+                              <h3 class="skills__name">JavaScript</h3>
+                              <span class="skills__level">Intermedio</span>
+                          </div>
+                      </div>
+                      <div class="skills__data">
+                          <i class="fab fa-react skills__icon"></i>
+                          <div class="skills__info">
+                              <h3 class="skills__name">React</h3>
+                              <span class="skills__level">Básico</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="skills__content">
+                  <h3 class="skills__title">Backend Development</h3>
+                  <div class="skills__box">
+                      <div class="skills__data">
+                          <i class="fab fa-python skills__icon"></i>
+                          <div class="skills__info">
+                              <h3 class="skills__name">Python</h3>
+                              <span class="skills__level">Básico</span>
+                          </div>
+                      </div>
+                      <div class="skills__data">
+                          <i class="fab fa-php skills__icon"></i>
+                          <div class="skills__info">
+                              <h3 class="skills__name">PHP</h3>
+                              <span class="skills__level">Intermedio</span>
+                          </div>
+                      </div>
+                      <div class="skills__data">
+                          <i class="fas fa-database skills__icon"></i>
+                          <div class="skills__info">
+                              <h3 class="skills__name">MySQL</h3>
+                              <span class="skills__level">Intermedio</span>
+                          </div>
+                      </div>
+                      <div class="skills__data">
+                          <i class="fas fa-server skills__icon"></i>
+                          <div class="skills__info">
+                              <h3 class="skills__name">PostgreSQL</h3>
+                              <span class="skills__level">Básico</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="skills__row">
+              <div class="skills__content">
+                  <h3 class="skills__title">Herramientas</h3>
+                  <div class="skills__box">
+                      <div class="skills__data">
+                          <i class="fab fa-git-alt skills__icon"></i>
+                          <div class="skills__info">
+                              <h3 class="skills__name">Git</h3>
+                              <span class="skills__level">Intermedio</span>
+                          </div>
+                      </div>
+                      <div class="skills__data">
+                          <i class="fab fa-github skills__icon"></i>
+                          <div class="skills__info">
+                              <h3 class="skills__name">GitHub</h3>
+                              <span class="skills__level">Intermedio</span>
+                          </div>
+                      </div>
+                      <div class="skills__data">
+                          <i class="fas fa-terminal skills__icon"></i>
+                          <div class="skills__info">
+                              <h3 class="skills__name">Terminal</h3>
+                              <span class="skills__level">Intermedio</span>
+                          </div>
+                      </div>
+                      <div class="skills__data">
+                          <i class="fas fa-code-branch skills__icon"></i>
+                          <div class="skills__info">
+                              <h3 class="skills__name">Control de Versiones</h3>
+                              <span class="skills__level">Intermedio</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="skills__content">
+                  <h3 class="skills__title">Documentación e Investigación</h3>
+                  <div class="skills__box">
+                      <div class="skills__data">
+                          <i class="fas fa-book skills__icon"></i>
+                          <div class="skills__info">
+                              <h3 class="skills__name">Documentación Técnica</h3>
+                              <span class="skills__level">Avanzado</span>
+                          </div>
+                      </div>
+                      <div class="skills__data">
+                          <i class="fas fa-search skills__icon"></i>
+                          <div class="skills__info">
+                              <h3 class="skills__name">Investigación</h3>
+                              <span class="skills__level">Avanzado</span>
+                          </div>
+                      </div>
+                      <div class="skills__data">
+                          <i class="fas fa-tasks skills__icon"></i>
+                          <div class="skills__info">
+                              <h3 class="skills__name">Metodologías Ágiles</h3>
+                              <span class="skills__level">Intermedio</span>
+                          </div>
+                      </div>
+                      <div class="skills__data">
+                          <i class="fas fa-project-diagram skills__icon"></i>
+                          <div class="skills__info">
+                              <h3 class="skills__name">Gestión de Proyectos</h3>
+                              <span class="skills__level">Intermedio</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- Información de contacto y redes sociales -->
+    <section class="contact section" id="contact">
+      <h2 class="section__title">Contacto</h2>
+
+      <div class="contact__container container">
+        <div class="contact__info">
+          <!-- Tarjeta LinkedIn -->
+          <div class="contact__card">
+            <i class="fab fa-linkedin contact__card-icon"></i>
+            <div class="contact__card-data">
+              <h3 class="contact__card-title">LinkedIn</h3>
+              <a href="https://www.linkedin.com/in/antonio-orlando-romero-7158b414b" target="_blank"
+                rel="noopener noreferrer" class="contact__card-link">
+                Antonio Romero
+              </a>
+            </div>
+          </div>
+
+          <!-- Tarjeta GitHub -->
+          <div class="contact__card">
+            <i class="fab fa-github contact__card-icon"></i>
+            <div class="contact__card-data">
+              <h3 class="contact__card-title">GitHub</h3>
+              <a href="https://github.com/tony2688" target="_blank" rel="noopener noreferrer"
+                class="contact__card-link">
+                @tony2688
+              </a>
+            </div>
+          </div>
+
+          <!-- Tarjeta WhatsApp -->
+          <div class="contact__card">
+            <i class="fab fa-whatsapp contact__card-icon"></i>
+            <div class="contact__card-data">
+              <h3 class="contact__card-title">WhatsApp</h3>
+              <a href="https://wa.me/+5493815555648" target="_blank" rel="noopener noreferrer"
+                class="contact__card-link">
+                Enviar mensaje
+              </a>
+            </div>
+          </div>
+
+          <!-- Tarjeta Email -->
+          <div class="contact__card">
+            <i class="fas fa-envelope contact__card-icon"></i>
+            <div class="contact__card-data">
+              <h3 class="contact__card-title">Email</h3>
+              <a href="mailto:tony_2688@hotmail.com" class="contact__card-link">
+                tony_2688@hotmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página con derechos de autor -->
+  <footer class="footer">
+    <div class="footer__container container">
+      <p class="footer__copy">
+        © <span id="current-year">2023</span> Antonio Romero.<br />
+        Todos los derechos reservados
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts para funcionalidades dinámicas -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/network.js"></script>
 </body>
 
 </html>
